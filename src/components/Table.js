@@ -1,6 +1,11 @@
 import React from "react";
+import Loader from './Loader';
 
-function Table({dataBase, ...props}) {
+function Table({dataBase, isLoading}) {
+  if (isLoading) {
+    return <Loader />
+  }
+
   return (
     <table className="table">
   <thead>

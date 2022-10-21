@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, {useEffect, useState} from "react";
-import Loader from "./components/Loader";
 import Pagination from "./components/Pagination";
 import Table from "./components/Table";
 
@@ -11,9 +10,7 @@ function App() {
 
   const [dataBase, setDataBase] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [totalRowCount, setTotalRowCount] = useState(null);
-  const [totalPageCount, setTotalPageCount] = useState(null);
-  const [currentPageNumber, setCurrentPageNumber] = useState(null);
+  const [currentPageNumber, setCurrentPageNumber] = useState(1);
   const [currentBlockData, setCurrentBlockData] = useState([]);
 
  
@@ -22,21 +19,14 @@ function App() {
   }
 
   useEffect(() => {
-    axios.get(baseUrl).then((res) => {
+    axios
+    .get(baseUrl)
+    .then((res) => {
       setDataBase(res.data);
       setIsLoading(false);
     })
     .catch((err) => console.log(err))
-  }, [])
-
-  useEffect(() => {
-      setTotalRowCount(dataBase.length);
-      const pagesCount = Math.ceil(totalRowCount/limitRows);
-      setTotalPageCount(pagesCount);
-      
-      currentPage();
-
-  },[setTotalRowCount, dataBase.length, totalRowCount])
+  },[])
 
   useEffect(() => {
       const lastBlockRow = currentPageNumber * limitRows;
@@ -46,13 +36,8 @@ function App() {
 
   return (
     <div className="container">
-      {isLoading 
-      ? <Loader /> 
-      : <>
-          <Table dataBase={currentBlockData} />
-          <Pagination totalPageCount={totalPageCount} currentPage={currentPage} />
-        </>
-      }
+      <Table dataBase={currentBlockData} isLoading={isLoading}/>
+      <Pagination totalRowCount={dataBase.length} currentPage={currentPage} limitRows={limitRows}/>
     </div>
   );
 }
