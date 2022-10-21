@@ -13,7 +13,7 @@ function Table({dataBase, isLoading}) {
       <th scope="col">Дата</th>
       <th scope="col">Название</th>
       <th scope="col">Количество</th>
-      <th scope="col">Дистанция</th>
+      <th scope="col">Расстояние</th>
     </tr>
   </thead>
   <tbody>
@@ -23,7 +23,7 @@ function Table({dataBase, isLoading}) {
         <td>{row.name}</td>
         <td>{row.count}</td>
         <td>{row.distance}</td>
-      </tr>
+       </tr>
     )}
   </tbody>
 </table>
