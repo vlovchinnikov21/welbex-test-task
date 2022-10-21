@@ -1,9 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 
-function Pagination({totalRowCount, currentPage, limitRows}) {
+function Pagination({totalPageCount, currentPage, prevPage, nextPage, currentPageNumber}) {
   
-  const totalPageCount = Math.ceil(totalRowCount/limitRows)
   const pages = [];
   
   for (let i=1; i<=totalPageCount; i++) {
@@ -13,16 +12,16 @@ function Pagination({totalRowCount, currentPage, limitRows}) {
   return (
   <nav aria-label="...">
     <ul className="pagination">
-        <li className="page-item">
-            <a className="page-link">Previous</a>
+        <li className={`page-item ${currentPageNumber === 1 ? 'disabled' : ''}`}>
+            <a className="page-link" onClick={prevPage}>Назад</a>
         </li>
         {pages.map((p) => 
-            <li className="page-item" key={p}>
+            <li className={`page-item ${currentPageNumber === p ? 'active' : ''}`} key={p}>
                 <a className="page-link" onClick={() => {currentPage(p)}}>{p}</a>
             </li>
         )}        
-        <li className="page-item">
-            <a className="page-link">Next</a>
+        <li className={`page-item ${currentPageNumber === totalPageCount ? 'disabled' : ''}`}>
+            <a className="page-link" onClick={nextPage}>Вперёд</a>
         </li>
     </ul>
   </nav>

@@ -12,7 +12,18 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
   const [currentBlockData, setCurrentBlockData] = useState([]);
+  const totalPageCount = Math.ceil(dataBase.length/limitRows)
 
+  const nextPage = () => {
+    if (currentPageNumber !== totalPageCount) {
+      setCurrentPageNumber(page => page + 1);
+    }
+  }
+  const prevPage = () => {
+    if (currentPageNumber !== 1) {
+      setCurrentPageNumber(page => page - 1);
+    }
+  }
  
   const currentPage = (page) => {
     setCurrentPageNumber(page);
@@ -37,7 +48,7 @@ function App() {
   return (
     <div className="container">
       <Table dataBase={currentBlockData} isLoading={isLoading}/>
-      <Pagination totalRowCount={dataBase.length} currentPage={currentPage} limitRows={limitRows}/>
+      <Pagination currentPage={currentPage} currentPageNumber={currentPageNumber} totalPageCount={totalPageCount} nextPage={nextPage} prevPage={prevPage}/>
     </div>
   );
 }
