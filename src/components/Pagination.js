@@ -2,6 +2,7 @@
 import React from "react";
 
 function Pagination({totalRowCount, currentPage, limitRows}) {
+  
   const totalPageCount = Math.ceil(totalRowCount/limitRows)
   const pages = [];
   
