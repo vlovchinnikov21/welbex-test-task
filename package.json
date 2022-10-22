@@ -1,0 +1,23 @@
+{
+  "name": "welbex-test-task",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "scripts": {
+    "server": "npm run dev --prefix backend",
+    "client": "npm run start --prefix frontend",
+    "start": "concurrently \"npm run server \" \"npm run client\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vlovchinnikov21/welbex-test-task.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vlovchinnikov21/welbex-test-task/issues"
+  },
+  "homepage": "https://github.com/vlovchinnikov21/welbex-test-task#readme"
+}

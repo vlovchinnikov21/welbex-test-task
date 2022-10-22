@@ -1,25 +1,23 @@
-import axios from "axios";
-import React, {useEffect, useState} from "react";
+import { api } from './utils/api';
+import React, { useEffect, useState } from "react";
 import FilterForm from "./components/FilterForm";
 import Pagination from "./components/Pagination";
 import Table from "./components/Table";
 
 function App() {
 
-  const baseUrl = 'https://filltext.com/?rows=100&date={date|10-10-2020,%2010-10-2022}&name={firstName}&count={number|100}&distance={number|500}';
   const limitRows = 10;
 
   const [dataBase, setDataBase] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
-  // const [currentBlockData, setCurrentBlockData] = useState([]);
   const [selectValue, setSelectValue] = useState('');
   const [selectRequireValue, setSelectRequireValue] = useState('');
   const [searchValue, setSearchValue] = useState('');  
 
   useEffect(() => {
-    axios
-    .get(baseUrl)
+    api
+    .getContent()
     .then((res) => {
       setDataBase(res.data);
       setIsLoading(false);
@@ -80,7 +78,6 @@ function App() {
   }
   
   const filterData = handleTextSearch();
-  console.log(filterData)
   
   const totalPageCount = Math.ceil(filterData.length/limitRows)
   const lastBlockRow = currentPageNumber * limitRows;

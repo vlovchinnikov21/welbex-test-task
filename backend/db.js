@@ -6,3 +6,5 @@ const pool = new Pool({
     port: "5432",
     database: "welbex_test"
 })
+
+module.exports = pool
