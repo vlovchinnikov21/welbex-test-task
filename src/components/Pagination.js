@@ -13,15 +13,15 @@ function Pagination({totalPageCount, currentPage, prevPage, nextPage, currentPag
   <nav aria-label="...">
     <ul className="pagination">
         <li className={`page-item ${currentPageNumber === 1 ? 'disabled' : ''}`}>
-            <a className="page-link" onClick={prevPage}>Назад</a>
+            <a className="page-link pointer" onClick={prevPage}>Назад</a>
         </li>
         {pages.map((p) => 
             <li className={`page-item ${currentPageNumber === p ? 'active' : ''}`} key={p}>
-                <a className="page-link" onClick={() => {currentPage(p)}}>{p}</a>
+                <a className="page-link pointer" onClick={() => {currentPage(p)}}>{p}</a>
             </li>
         )}        
         <li className={`page-item ${currentPageNumber === totalPageCount ? 'disabled' : ''}`}>
-            <a className="page-link" onClick={nextPage}>Вперёд</a>
+            <a className="page-link pointer" onClick={nextPage}>Вперёд</a>
         </li>
     </ul>
   </nav>
