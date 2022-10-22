@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/vlovchinnikov21/welbex-test-task/issues"
   },
-  "homepage": "https://github.com/vlovchinnikov21/welbex-test-task#readme"
+  "homepage": "https://github.com/vlovchinnikov21/welbex-test-task#readme",
+  "dependencies": {
+    "concurrently": "^7.5.0"
+  }
 }
