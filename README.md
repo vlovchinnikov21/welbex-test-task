@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Проект: Welbex-test-task (frontend & backend)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+**Задача**
 
-In the project directory, you can run:
+Нужно разработать таблицу в формате Single Page Application.
 
-### `npm start`
+**Требования к таблице.**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Таблица должна содержать 4 колонки:
+    1. Дата
+    2. Название
+    3. Количество
+    4. Расстояние
+2. База данных может быть PostgreSQL
+3. Таблица должна иметь сортировку по всем полям кроме даты. Фильтрация должна быть в виде двух выпадающих списков и текстового поля:
+    1. Выбор колонки, по которой будет фильтрация
+    2. Выбор условия (равно, содержить, больше, меньше)
+    3. Поле для ввода значения для фильтрации
+4. Таблица должна содержать пагинацию
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Вся таблица должна работать без перезагрузки страницы.
 
-### `npm test`
+**Можно использовать:**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Возможности node.js
+- React/Axios
+- css библиотеки
 
-### `npm run build`
+**Нельзя использовать:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Библиотеки с готовыми компонентами или плагины для React, которые
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+предоставляют готовый функционал, требуемый в задании
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Библиотеки и плагины для валидации
+- Библиотеки и плагины для работы с БД, ORM
+- CMS системы
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Используемые технологии
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* HTML5
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* Bootstrap 5 (только CSS3)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* JavaScript
 
-## Learn More
+* React.js
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* Node.js
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Express
 
-### Code Splitting
+* PostgreSQL
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* Деплой на Heroku(серверная часть и база данных)
 
-### Analyzing the Bundle Size
+## Запуск проекта
+Для запуска проекта:
+1. Клонировать репозиторий
+2. Установить зависимости `npm install` для корневой папки (для concurrently), а также для backend и frontend
+3. Запустить проект `npm start`
+4. Проект запускается на http://localhost:3000/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Url**
+---
+* Backend: https://welbex-test.herokuapp.com/
+* Frontend: https://welbex-test-frontend.herokuapp.com/

@@ -1,11 +1,14 @@
-const db = require('../db')
+const client = require('../db')
 
-class DataController {
-    async getData(req, res) {
-        const table = await db.query('SELECT * FROM welbex_data')
-        res.json({data: table.rows})
-    }
-}
-    
-module.exports = new DataController()  
-    
+client.connect();
+
+const getData = (request, response) => {
+    client.query('SELECT * FROM public.welbex_data;', (error, results) => {
+      if (error) {
+        throw error
+      }
+      response.status(200).json(results.rows)
+    })
+  }    
+
+module.exports = getData

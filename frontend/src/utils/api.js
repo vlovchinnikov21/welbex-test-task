@@ -21,7 +21,7 @@ class Api {
 }
 
 const api = new Api({
-  url: '/api/data',
+  url: 'https://welbex-test.herokuapp.com/api/data',
   headers: {
     'Content-Type': 'application/json',
   },
