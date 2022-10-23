@@ -2,7 +2,8 @@
 
 ---
 
-**Задача**
+**Url**
+---
 
 Нужно разработать таблицу в формате Single Page Application.
 
@@ -62,7 +63,8 @@
 1. Клонировать репозиторий
 2. Установить зависимости `npm install` для корневой папки (для concurrently), а также для backend и frontend
 3. Запустить проект `npm start`
-4. Проект запускается на http://localhost:3000/
+4. Проект запускается на http://localhost:3000/ , а сервер на http://localhost:8080/
+5. Чтобы подключиться к задеплоенному серверу нужно в frontend/utils/api.js поменять url на https://welbex-test.herokuapp.com/
 
 **Url**
 ---

@@ -13,7 +13,7 @@ class Api {
   }
 
   getContent() {
-    return fetch(this._url, {
+    return fetch(this._url + '/api/data', {
       method: 'GET',
       headers: this._headers,
     }).then(this._checkResponse);
@@ -21,7 +21,7 @@ class Api {
 }
 
 const api = new Api({
-  url: 'https://welbex-test.herokuapp.com/api/data',
+  url: 'http://localhost:8080',
   headers: {
     'Content-Type': 'application/json',
   },
