@@ -1,4 +1,4 @@
-# Проект: Welbex-test-task (frontend & backend)
+# Тестовое задание: Welbex-test-task (frontend & backend)
 
 ---
 
