@@ -1,8 +1,8 @@
-# Проект: Welbex-test-task (frontend & backend)
+# Тестовое задание: Welbex-test-task (frontend & backend)
 
 ---
 
-**Url**
+**Задача**
 ---
 
 Нужно разработать таблицу в формате Single Page Application.
